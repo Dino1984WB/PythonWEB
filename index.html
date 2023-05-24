@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shopping List</title>
+    <style>
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        input[type="text"], input[type="submit"] {
+            display: block;
+            margin-bottom: 10px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Shopping List</h2>
+        <form id="shoppingForm">
+            <input type="text" id="itemInput" placeholder="Enter an item" required>
+            <input type="submit" value="Add Item">
+        </form>
+        <ul id="itemList"></ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
