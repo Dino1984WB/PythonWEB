@@ -13,7 +13,7 @@ function addItem(e) {
         // Send HTTP request to backend
         const xhr = new XMLHttpRequest();
         xhr.open("POST", "/add-item", true);
-        xhr.setRequestHeader("Content-Type", "application/json");
+        //xhr.setRequestHeader("Content-Type", "application/json");
         xhr.send(JSON.stringify({ item: newItem }));
 
         itemInput.value = "";

@@ -19,10 +19,10 @@ def add_item():
     return ""
 
 if __name__ == "__main__":
-    # Create SQLite database and table if they don't exist
-    conn = sqlite3.connect(DB_NAME)
-    cursor = conn.cursor()
-    cursor.execute("CREATE TABLE IF NOT EXISTS items (name TEXT)")
-    conn.close()
+    #Create SQLite database and table if they don't exist
+    #conn = sqlite3.connect(DB_NAME)
+    #cursor = conn.cursor()
+    #cursor.execute("CREATE TABLE IF NOT EXISTS items (name TEXT)")
+    #conn.close()
 
     app.run()
