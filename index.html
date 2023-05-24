@@ -4,21 +4,25 @@
     <title>Shopping List</title>
     <style>
         .container {
-            max-width: 400px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        input[type="text"], input[type="submit"] {
-            display: block;
-            margin-bottom: 10px;
-        }
-        ul {
+      margin: 20px;
+    }
+    .button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    .list {
+      margin-top: 20px;
+    }
+    .ul {
             list-style-type: none;
             padding: 0;
-        }
-        li {
+    }
+    .li {
             margin-bottom: 5px;
-        }
+    }
     </style>
 </head>
 <body>
@@ -30,6 +34,12 @@
         </form>
         <ul id="itemList"></ul>
     </div>
+
+    <div class="container2">
+        <h1>Shopping List</h1>
+        <button class="button" onclick="getShoppingList()">Get Shopping List</button>
+        <ul id="shoppingList" class="list"></ul>
+      </div>
 
     <script src="index.js"></script>
 </body>

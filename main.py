@@ -3,20 +3,30 @@ import sqlite3
 
 app = Flask(__name__)
 DB_NAME = "shopping_list.db"
+items = ""
+
+@app.route("/see-items", methods=["GET"])
+def get_items():
+    conn = sqlite3.connect(DB_NAME)
+    cur = conn.cursor()
+    cur.execute("SELECT * FROM items")
+    items = cur.fetchall()
+    conn.close()
+    return jsonify(items)
 
 @app.route("/add-item", methods=["POST"])
-def add_item():
-    data = request.get_json()
-    item = data["item"]
+def add_item_DB():
+    
+    items = request.json
 
     # Store item in SQLite database
     conn = sqlite3.connect(DB_NAME)
     cursor = conn.cursor()
-    cursor.execute("INSERT INTO items (name) VALUES (?)", (item,))
+    cursor.execute("INSERT INTO items (name) VALUES (?)", (items,))
     conn.commit()
     conn.close()
 
-    return ""
+    return 0
 
 if __name__ == "__main__":
     #Create SQLite database and table if they don't exist
