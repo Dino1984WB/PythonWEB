@@ -16,55 +16,59 @@
         border: 1px solid black;
         background-color: white;
         }
+                
+    .container1 {
+        position: relative;
+        margin: 0 auto;
+    }
         
-        .container1 {
-            position: relative;
-            margin: 0 auto;
+        .button {
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: rgb(17, 17, 17);
+        border: none;
+        cursor: pointer;
         }
-        
-    .button {
-      padding: 10px 20px;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      cursor: pointer;
+    .container2 {
+    border: 1px solid #4CAF50;
+    color: hwb(0 0% 100%);
+    border-radius: 5px;
     }
-        .container2 {
-        border: 1px solid #4CAF50;
-        color: hwb(0 0% 100%);
-        border-radius: 5px;
+        .list {
+            padding: 10px;
         }
-    .list {
-        padding: 10px;
-    }
-    .ul {
-            list-style-type: none;
-            padding: 0;
-    }
-    .li {
-            margin-bottom: 5px;
+        .ul {
+                list-style-type: none;
+                padding: 0;
+        }
+        .li {
+                margin-bottom: 5px;
 
-        }
+            }
     </style>
 </head>
 <body>
    <div class="container" >
     <div class="container1">
         <h2>Shopping List</h2>
-        <form id="shoppingForm">
+        <form id="shoppingForm1">
             <input type="text" id="itemInput" placeholder="Enter an item" required>
-            <input type="submit" value="Add Item">
+            <input type="submit" value="Add Item" id ="button1">
         </form>
         <ul id="itemList"></ul>
     </div>
 
     <div class="container2">
         <h1>Shopping List</h1>
-        <button class="button" onclick="getShoppingList()">Get Shopping List</button>
-        <ul id="shoppingList" class="list"></ul>
+        <form id="shoppingForm2"></form>
+        <input type="submit" value="Get Shopping List" id="button2">
+        </form>
+        <ul id="shoppingList" class="itemOutputList"></ul>
+
       </div>
 
-    <script src="index.js"></script>
+    
     </div>
+    <script src="index.js"></script>
 </body>
 </html>

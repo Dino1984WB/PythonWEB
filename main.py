@@ -5,14 +5,16 @@ app = Flask(__name__)
 DB_NAME = "shopping_list.db"
 items = ""
 
+
 @app.route("/get-item", methods=["GET"])
 def get_items():
     conn = sqlite3.connect(DB_NAME)
     cur = conn.cursor()
     cur.execute("SELECT * FROM items")
-    items = cur.fetchall()
+    shopping_list = cur.fetchall()
     conn.close()
-    return jsonify(items)
+    return str(shopping_list)
+    
 
 @app.route("/add-item", methods=["POST"])
 def add_item_DB():

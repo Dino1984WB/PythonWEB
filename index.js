@@ -1,4 +1,5 @@
-document.getElementById("shoppingForm").addEventListener("submit", addItem);
+document.getElementById("shoppingForm1").addEventListener("submit", addItem);
+document.getElementById("shoppingform2").addEventListener("submit", addItem);
 
 function addItem(e) {
     e.preventDefault();
@@ -22,33 +23,22 @@ function addItem(e) {
         itemInput.value = "";
     }
 }
+function getItem(item) {    
 
-function getShoppingList() {
-
-    e.preventDefault();
-    var xhr = new XMLHttpRequest();
+    //get item from db through flask backend
+    const xhr = new XMLHttpRequest();
     var requestType = "GET";
     var url = "http://127.0.0.1:5000/get-item";
     var opened = true;
     xhr.open(requestType, url, opened);
     xhr.setRequestHeader("Content-Type", "application/http://127.0.0.1:5000","application/json");
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === XMLHttpRequest.DONE) {
-            if (xhr.status === 200) {
-                const shoppingList = JSON.parse(xhr.responseText);
-                var shoppingList = document.getElementById("shoppingList");
-                shoppingList.innerHTML = "";
-                //anddd whatshould item really be called?
-                response.array.forEach(item => {
-                    var listItem = document.createElement("li");
-                    listItem.textContent = item;
-                    shoppingList.appendChild(listItem);
-                
-                });
-            }
-        }
-    }
-
     xhr.send();
 
-}
+    const response = JSON.parse(xhr.responseText);
+    console.log(response);
+    if (response.length > 0) {
+        const listItem = document.createElement("li");
+        listItem.textContent = response[0].item;
+        document.getElementById("itemOutputList").appendChild(listItem);
+    }   
+}       
