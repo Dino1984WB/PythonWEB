@@ -24,9 +24,11 @@ function addItem(e) {
 }
 
 function getShoppingList() {
+
+    e.preventDefault();
     var xhr = new XMLHttpRequest();
     var requestType = "GET";
-    var url = "http://127.0.0.1:5000/get-shopping-list";
+    var url = "http://127.0.0.1:5000/get-item";
     var opened = true;
     xhr.open(requestType, url, opened);
     xhr.setRequestHeader("Content-Type", "application/http://127.0.0.1:5000","application/json");
@@ -48,5 +50,5 @@ function getShoppingList() {
     }
 
     xhr.send();
-    
+
 }

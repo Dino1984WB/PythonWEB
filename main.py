@@ -5,7 +5,7 @@ app = Flask(__name__)
 DB_NAME = "shopping_list.db"
 items = ""
 
-@app.route("/see-items", methods=["GET"])
+@app.route("/get-item", methods=["GET"])
 def get_items():
     conn = sqlite3.connect(DB_NAME)
     cur = conn.cursor()
