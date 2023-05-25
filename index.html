@@ -3,9 +3,25 @@
 <head>
     <title>Shopping List</title>
     <style>
-        .container {
-      margin: 20px;
-    }
+    .container {
+        position: relative; 
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1 px solid black;
+        place-items: center;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        border: 1px solid black;
+        background-color: white;
+        }
+        
+        .container1 {
+            position: relative;
+            margin: 0 auto;
+        }
+        
     .button {
       padding: 10px 20px;
       background-color: #4CAF50;
@@ -13,8 +29,13 @@
       border: none;
       cursor: pointer;
     }
+        .container2 {
+        border: 1px solid #4CAF50;
+        color: hwb(0 0% 100%);
+        border-radius: 5px;
+        }
     .list {
-      margin-top: 20px;
+        padding: 10px;
     }
     .ul {
             list-style-type: none;
@@ -22,11 +43,13 @@
     }
     .li {
             margin-bottom: 5px;
-    }
+
+        }
     </style>
 </head>
 <body>
-    <div class="container">
+   <div class="container" >
+    <div class="container1">
         <h2>Shopping List</h2>
         <form id="shoppingForm">
             <input type="text" id="itemInput" placeholder="Enter an item" required>
@@ -34,13 +57,14 @@
         </form>
         <ul id="itemList"></ul>
     </div>
-    <br>
-    <div>
+
+    <div class="container2">
         <h1>Shopping List</h1>
         <button class="button" onclick="getShoppingList()">Get Shopping List</button>
         <ul id="shoppingList" class="list"></ul>
       </div>
 
     <script src="index.js"></script>
+    </div>
 </body>
 </html>
